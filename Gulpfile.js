@@ -57,7 +57,7 @@ gulp.task('test', function () {
 gulp.task('build', function () {
 	return gulp
 		.src(config.input.build)
-		.pipe(plugins.concat('_sass-typography.scss'))
+		.pipe(plugins.concat('sass-typography.scss'))
 		.pipe(plugins.header(fs.readFileSync('./banner.txt', 'utf8')))
 		.pipe(plugins.header('@charset \'UTF-8\';\n\n'))
 		.pipe(plugins.replace(/@version@/, packageInfo.version))

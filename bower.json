@@ -6,7 +6,7 @@
     "David Victor <david@techbro.biz>"
   ],
   "description": "My sass typography helpers",
-  "main": "sass-typography.scss",
+  "main": "dist/sass/sass-typography.scss",
   "keywords": [
     "sass",
     "yolo",
