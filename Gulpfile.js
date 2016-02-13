@@ -17,7 +17,7 @@ var config = {
 		],
 		build: [
 			'src/_settings.scss',
-			'src/_modular-scale.scss',
+			'src/_ms.scss',
 			'src/_font-face.scss',
 			'src/_misc.scss',
 			'src/_typography.scss'
