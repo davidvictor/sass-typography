@@ -1,0 +1,59 @@
+// Modular scale
+// ---------------------------------------
+
+// Setting responsive modular-scales. Use appropriate scales for viewport sizes.
+
+$ms-config: (
+	scale-0:(
+		range: 14,
+		ratio: $major-third
+	),
+	scale-1: (
+		range: 15,
+		ratio: $major-third
+	),
+	scale-2: (
+		range: 16,
+		ratio: $major-third
+	),
+	scale-3: (
+		range: 17,
+		ratio: $major-third
+	),
+	scale-4: (
+		range: 18,
+		ratio: $major-third
+	),
+	scale-5: (
+		range: 19,
+		ratio: $major-third
+	),
+	scale-6: (
+		range: 20,
+		ratio: $major-third
+	),
+	scale-7:(
+		range: 21,
+		ratio: $major-third
+	),
+);
+
+$ms-names: (alpha beta gamma delta epsilon zeta eta theta iota kappa lamda);
+
+@function ms-build-map() {
+	$return: ();
+	$return: map_keys($ms-config);
+	@each $scale, $data in $ms-config {
+		@each $name in $ms-names {
+			$i: index($ms-names, $name);
+			$list: ms(6 - $i, get($data, range), get($data, ratio));
+			$return: map_merge-deep($return, $scale, $name, $list);
+		}
+	}
+	//@debug $return;
+	@return $return;
+};
+
+$modular-scale-map: ms-build-map();
+
+

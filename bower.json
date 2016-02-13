@@ -1,0 +1,21 @@
+{
+  "name": "roar-sass-typography",
+  "version": "0.0.1",
+  "homepage": "https://github.com/davidvictor/sass-typography",
+  "authors": [
+    "David Victor <david@techbro.biz>"
+  ],
+  "description": "My sass typography helpers",
+  "main": "sass-typography.scss",
+  "keywords": [
+    "sass",
+    "yolo",
+    "roar"
+  ],
+  "license": "MIT",
+  "ignore": [],
+  "dependencies": {
+    "modular-scale": "^2.1.1",
+    "sass-maps-plus": "git@github.com:lunelson/sass-maps-plus.git"
+  }
+}

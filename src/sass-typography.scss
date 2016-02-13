@@ -1,0 +1,158 @@
+// ⧂⧟⧟❛Ʀoɑr⧟Ƒrɑmeworĸ⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⦒≻
+
+// +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳
+// | SASS TYPOGRAPHY
+// +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳
+////
+/// @group Typography
+/// @author David Victor
+////
+/// Imports all partials
+//  +==============================================================================-
+
+@import '../bower_components/modular-scale/stylesheets/_modular-scale.scss';
+@import '../bower_components/sass-maps-plus/_sass-maps-plus.scss';
+@import "_settings.scss";
+@import "_font-face.scss";
+@import "_misc.scss";
+@import "_ms.scss";
+@import "_typography.scss";
+
+
+.typeset {
+
+	// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+	p {
+		@include sassline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+	}
+
+	p.small {
+		@include sassline($fontsize: theta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+	}
+
+	p.tiny {
+		@include sassline($fontsize: iota, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+	}
+
+	// Heading level 1.
+	h1,
+	.alpha {
+		@include sassline($fontsize: alpha, $font: $headingtype, $lineheight: 3, $below: 1, $breakpoint: all);
+	}
+
+	// Heading level 2.
+	h2,
+	.beta {
+		@include sassline(beta, $headingtype, 3, 1, all);
+	}
+
+	// Heading level 3.
+	h3,
+	.gamma {
+		@include sassline(gamma, $headingtype, 3, 1, all);
+	}
+
+	// Heading level 4.
+	h4,
+	.delta {
+		@include sassline(delta, $headingtype, 2, 0, all);
+	}
+
+	// Heading level 5.
+	h5,
+	.epsilon {
+		@include sassline(epsilon, $headingtype, 2, 0, all);
+	}
+
+	// Heading level 6.
+	h6,
+	.zeta {
+		@include sassline(zeta, $headingtype, 2, 0, all);
+	}
+
+	h6.small {
+		@include sassline(theta, $headingtype, 2, 0, all);
+	}
+
+	h6.tiny {
+		@include sassline(iota, $headingtype, 2, 0, all);
+	}
+
+	// Lists.
+	ul,
+	ol {
+		display: inline;
+		//@include baseline(zeta, $bodytype, 2, 2, all);
+		&.not-inline {
+			li {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		li {
+			//display: inline-block;
+			font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+			margin-left: 2rem;
+			//@include baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 1, $breakpoint: all);
+			@include roar-breakpoint(break-1) {
+				margin-left: 0;
+			}
+			p {
+				@include roar-baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+			}
+			&:last-child {
+				p {
+					@include roar-baseline($fontsize: zeta, $font: $bodytype, $lineheight: 2, $below: 2, $breakpoint: all);
+				}
+			}
+		}
+		&.small {
+			li,
+			li p {
+				@include roar-fontsize(theta, all);
+			}
+		}
+	}
+
+
+	// Quotes.
+	blockquote {
+
+		p {
+			border-left: 0.15rem solid $link-color;
+			font-style: map-get($bodytype, italic);
+			padding-left: 1rem;
+
+			// Add spacing below blockquote paragraphs to align to baseline grid.
+			$get-scale: map-get($modular-scale-map, scale-0);
+			$get-size: map-get($get-scale, zeta);
+			$rootsize: nth($sizes, 1);
+			$baseline-shift: #{($get-size / 2 * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001};
+			$baseline-push: #{3 - (($get-size * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001)};
+
+			margin-bottom: #{$baseline-push}rem;
+			padding-bottom: #{$baseline-shift}rem;
+
+			@for $i from 2 through $breakpoints-limit {
+				$get-scale: map-get($modular-scale-map, scale-#{$i - 1});
+				$get-size: map-get($get-scale, zeta);
+				$rootsize: nth($sizes, $i);
+				$baseline-shift: #{($get-size / 2 * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001};
+				$baseline-push: #{3 - (($get-size * ((2 * $rootsize / $get-size) - map-get($bodytype, cap-height))) / $rootsize + 0.00001)};
+
+				@media screen and (min-width: nth($points, $i) / 16 * 1em) {
+					margin-bottom: #{$baseline-push}rem;
+					padding-bottom: #{$baseline-shift}rem;
+				}
+			}
+		}
+
+		@include roar-breakpoint(break-1) {
+			margin-left: -1rem;
+		}
+	}
+
+
+}
+

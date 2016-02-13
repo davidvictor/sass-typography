@@ -1,0 +1,611 @@
+@charset 'UTF-8';
+
+//                     sass typography
+//
+//                        v0.0.1
+//
+//      This project is licensed under the terms of the MIT license
+
+
+// ⧂⧟⧟❛Ʀoɑr⧟Ƒrɑmeworĸ⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⦒≻
+
+// +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳
+// | SASS TYPOGRAPHY | SETTINGS
+// +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳\
+
+$rem-base: 16px !default;
+// Note: For the following Sass maps enter values as if they would be px units.
+
+// Breakpoint sizes from px to ems. Add more values here to add more breakpoints.
+// Change names if you prefer, it wont break the mixin as long as they are strings not just numbers.
+
+$type-breakpoints: (
+	break-0: 0,
+	break-1: 480,
+	break-2: 768,
+	break-3: 1024,
+	break-4: 1280,
+	break-5: 1440,
+	break-6: 1680,
+	break-7: 1920
+) !default;
+
+// Root font-sizes for each breakpoint. Set to half desired line-height of body text.
+// ! Make sure to have as many sizes as breakpoints above.
+$rootsizes: (
+	rootsize-0: 10,
+	rootsize-1: 11,
+	rootsize-2: 12,
+	rootsize-3: 13,
+	rootsize-4: 15,
+	rootsize-5: 17,
+	rootsize-6: 19,
+	rootsize-7: 21,
+) !default;
+
+
+$default-font-stack: 'Avenir, Helvetica, Arial, sans-serif' !default;
+
+//$brandon: 'brandon', #{$font-stack-fallback};
+//$eames: 'eames', #{$font-stack-fallback};
+//$proxima: 'proxima-nova', #{$font-stack-fallback};
+//$sf: 'SanFranciscoText', #{$font-stack-fallback};
+
+// Add typefaces here.
+// Add weight and style details too.
+// ! Set cap height to set to the baseline.
+$bodytype: (
+	font-family: $default-font-stack,
+	regular: 300,
+	bold: 500,
+	italic: italic,
+	cap-height: 0.66
+) !default;
+
+$headingtype: (
+	font-family: $default-font-stack,
+	regular: 300,
+	bold: 500,
+	cap-height: 0.65
+) !default;
+
+$monospacetype: (
+	font-family: 'Menlo, monospace',
+	regular: 400,
+	cap-height: 0.68
+) !default;
+
+// Here are some local fonts cap-height sizes to get you started:
+// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
+// Lucida Grande: 0.72, Helvetica: 0.65, Verdana: 0.76, Tahoma: 0.76
+
+// Selection of Typekit fonts cap-height sizes:
+// Proxima Nova: 0.57, Museo Slab: 0.66, JAF Facit: 0.7, Brandon Grotesque: 0.65, Clavo: 0.7, Adelle: 0.66, FF Tisa Pro: 0.82, Jubilat: 0.66, Futura PT: 0.66, Chaparral Pro: 0.5, Minion Pro: 0.66, Myriad Pro: 0.66, Adobe Caslon Pro: 0.36
+
+// Text colours. 
+$heading-color: black !default;
+$body-color: #494949 !default;
+$link-color: blue !default;
+$hover-color: rebeccapurple !default;
+$caption-color: grey !default;
+$white: #ffffff !default;
+
+// Background colors.
+$type-bg-color: white !default;
+$code-bg-color: #f5f4f2 !default;
+
+$font-key-map: (
+	font-body: (
+		id: font-body,
+		value: $default-font-stack
+	),
+	font-headings: (
+		id: font-headings,
+		value: $default-font-stack
+	),
+	font-condensed: (
+		id: font-condensed,
+		value: $default-font-stack
+	),
+	font-extra-condensed: (
+		id: font-extra-condensed,
+		value: $default-font-stack
+	)
+) !default;
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function ff-str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + ff-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+							eot: "?",
+							svg: "#" + ff-str-replace($name, " ", "_")
+						);
+
+	$formats: (
+							otf: "opentype",
+							ttf: "truetype"
+						);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+$blank-loaded: false;
+
+/// Create the font face for the Adobe Blank Font
+//  +==============================================================================-
+/// @param {Boolean} $blank-loaded - Has the blank font been already declared?
+
+@mixin blank-font($blank-loaded) {
+	@if $blank-loaded == false {
+		@at-root {
+			@font-face {
+				font-family: 'blank';
+				src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('woff');
+				font-style: normal;
+				font-weight: 400;
+			}
+		}
+		$blank-loaded: true !global;
+	}
+}
+
+/// Hide text mixin that uses adobe blank
+@mixin hide-text($bl:$blank-loaded) {
+	@if not $bl {
+		@include blank-font($bl)
+	}
+	font-family: blank !important;
+	// The font above only has lowercase characters to reduce size.
+	text-transform: lowercase !important;
+	color: $trans !important;
+	$blank-loaded: true !global;
+}
+
+// -------------------------------------------------------------------------------
+//  White Space
+// -------------------------------------------------------------------------------
+
+@mixin white-space($wrap-space) {
+	@if $wrap-space == "pre-wrap" {
+		white-space: -moz-#{$wrap-space};
+		white-space: $wrap-space;
+	} @else {
+		white-space: $wrap-space;
+	}
+}
+
+// -------------------------------------------------------------------------------
+//  Hyphens
+// -------------------------------------------------------------------------------
+
+@mixin hyphens($val) {
+	-webkit-hyphens: $val;
+	-moz-hyphens: $val;
+	-ms-hyphens: $val;
+	-o-hyphens: $val;
+	hyphens: $val;
+}
+
+// -------------------------------------------------------------------------------
+//  Small Caps
+// -------------------------------------------------------------------------------
+
+@mixin smallcaps($color, $font-weight) {
+	font-variant: small-caps;
+	font-weight: $font-weight;
+	text-transform: lowercase;
+	color: $color;
+}
+
+// ------------------------------------------------------------------------------
+// !-- Truncate
+// ------------------------------------------------------------------------------
+
+@mixin truncate($mw:100%) {
+	text-overflow: ellipsis;
+	vertical-align: top;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	max-width: $mw;
+}
+
+
+
+// ------------------------------------------------------------------------------
+// !-- Line Clamp
+// ------------------------------------------------------------------------------
+
+@mixin line-clamp($number-of-lines,$line-height) {
+	position: relative;
+	overflow: hidden;
+	line-height: $line-height;
+	max-height: $line-height * $number-of-lines + 1;
+	display: -webkit-box;
+	-webkit-line-clamp: $number-of-lines;
+	-webkit-box-orient: vertical;
+}
+
+// SCSS mixins
+// ---------------------------------------
+
+@if not $modular-scale-map {
+	@warn "Please include the utility law 'modular-scale.scss'";
+}
+
+// Global variables used in mixins.
+
+// Number of breakpoints.
+$breakpoints-limit: length($type-breakpoints);
+
+// List of rootsizes, breakpoints, and max-widths.
+$sizes: map-values($rootsizes);
+$points: map-values($type-breakpoints);
+
+
+// Breakpoints. Either set one to one of the breakpoint variables, or use a custom value for minor breakpoints.
+// Defaults to min-width, but both min->max and max-width are available too.
+// Parts based on https://gist.github.com/timknight/03e6335b8816aa534cf7
+@mixin roar-breakpoint($break: 0, $max: 0) {
+	// Type of break variable
+	$value: type-of($break);
+
+	// If it is a string (i.e. a breakpoint variable).
+	@if $value == string {
+		// If using 'break-1', 'break-2' etc output the correct breakpoints from map.
+		@if map-has-key($type-breakpoints, $break) {
+			@media screen and (min-width: #{map-get($type-breakpoints, $break) / 16 * 1em} ) { @content; }
+		} @else {
+			@warn "#{$break} is not a set breakpoint variable";
+		}
+
+		// If it is a number, use this for the breakpoint.
+	} @else if $value == number {
+		// If using other numbers output value in ems either for min, min & max or max width breakpoints.
+		$query: "all" !default;
+		@if      $break != 0 and $max != 0 { $query: "(min-width: #{$break / 16 * 1em}) and (max-width: #{$max / 16 * 1em})"; }
+		@else if $break != 0 and $max == 0 { $query: "(min-width: #{$break / 16 * 1em})"; }
+		@else if $break == 0 and $max != 0 { $query: "(max-width: #{$max / 16 * 1em})"; }
+		@media #{$query} { @content; }
+
+	} @else {
+		@warn "#{$break} is not valid to use as a breakpoint";
+	}
+}
+
+// Root font-size in %, outputted in correct breakpoints.
+@mixin rootsize() {
+	font-size: nth($sizes, 1) / 16 * 100%;
+
+	// Loop through breakpoints.
+	@for $i from 2 through $breakpoints-limit {
+		@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+			font-size: nth($sizes, $i) / 16 * 100%;
+		}
+	}
+}
+
+// Value in scale in $modular-scale?
+// Used in following fontsize mixin.
+@function in-modular-scale($scale, $key) {
+	$map: map-get($modular-scale-map, $scale);
+	$output: map-has-key($map, $key);
+	@return $output;
+}
+
+// Font-size in rems. Either set per breakpoint or for all.
+// Use values as you would for pixels i.e. 16 or use values from the modular scale.
+@mixin roar-fontsize($fontsize, $breakpoint: 0) {
+	// Type of chosen variables.
+	$font-value: type-of($fontsize);
+	$break-value: type-of($breakpoint);
+
+	// Check if value exists in scale.
+	$in-scale: in-modular-scale(scale-0, $fontsize);
+
+	// If specifying a breakpoint to use (and breakpoint exists).
+	@if $break-value == number and $breakpoint <= ($breakpoints-limit - 1) and $breakpoint >= 0 {
+
+		// If using a number for fontsize.
+		@if $font-value == number {
+			font-size: #{$fontsize / nth($sizes, ($breakpoint + 1))}rem;
+
+			// If using a variable from the scale for fontsize.
+		} @else if $in-scale == true {
+			$get-scale: map-get($modular-scale-map, scale-#{$breakpoint});
+			$get-size: map-get($get-scale, $fontsize);
+
+			font-size: #{$get-size / nth($sizes, ($breakpoint + 1))}rem;
+
+		} @else {
+			@warn "#{$fontsize} is not a valid scale variable";
+		}
+
+		// If want to use value for all breakpoints.
+	} @else if $breakpoint == all {
+
+		// If using a number for fontsize.
+		@if $font-value == number {
+			font-size: #{$fontsize / nth($sizes, 1)}rem;
+
+			// Loop through breakpoints.
+			@for $i from 2 through $breakpoints-limit {
+				@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+					font-size: #{$fontsize / nth($sizes, $i)}rem;
+				}
+			}
+
+			// If using a variable from the scale for fontsize.
+		} @else if $in-scale == true {
+			$get-scale: map-get($modular-scale-map, scale-0);
+			$get-size: map-get($get-scale, $fontsize);
+			font-size: #{$get-size / nth($sizes, 1)}rem;
+
+			// Loop through breakpoints.
+			@for $i from 2 through $breakpoints-limit {
+				$get-scale: map-get($modular-scale-map, scale-#{$i - 1});
+				$get-size: map-get($get-scale, $fontsize);
+
+				@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+					font-size: #{$get-size / nth($sizes, $i)}rem;
+				}
+			}
+
+		} @else {
+			@warn "#{$fontsize} is not a valid scale variable";
+		}
+
+	} @else {
+		@warn "#{$breakpoint} is not valid to use as a breakpoint";
+	}
+}
+
+// Advanced baseline magic.
+// ! Read the README to help understand what is going on here.
+// Parts based on https://gist.github.com/razwan/10662500
+@mixin roar-baseline($fontsize, $font, $lineheight: 2, $below: 2, $breakpoint: 0) {
+	// Type of chosen variables.
+	$font-value: type-of($fontsize);
+	$break-value: type-of($breakpoint);
+
+	// Cap height
+	$cap-height: map-get($font, cap-height);
+
+	// Check if value exists in scale.
+	$in-scale: in-modular-scale(scale-0, $fontsize);
+
+	// Set the line-height.
+	line-height: #{$lineheight}rem;
+
+	// If specifying a breakpoint to use (and breakpoint exists).
+	@if $break-value == number and $breakpoint <= ($breakpoints-limit - 1) and $breakpoint >= 0 {
+
+		// If using a number for fontsize.
+		@if $font-value == number {
+			$rootsize: nth($sizes, ($breakpoint + 1));
+			$baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+			// If using a variable from the scale for fontsize.
+		} @else if $in-scale == true {
+			$get-scale: map-get($modular-scale-map, scale-#{$breakpoint});
+			$get-size: map-get($get-scale, $fontsize);
+			$rootsize: nth($sizes, ($breakpoint + 1));
+
+			$baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
+
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+		} @else {
+			@warn "#{$fontsize} is not a valid scale variable";
+		}
+
+		// If want to use value for all breakpoints.
+	} @else if $breakpoint == all {
+
+		// If using a number for fontsize.
+		@if $font-value == number {
+			$rootsize: nth($sizes, 1);
+			$baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+			// Loop through breakpoints.
+			@for $i from 2 through $breakpoints-limit {
+				$rootsize: nth($sizes, $i);
+				$baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
+				$baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+
+				@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+					margin-bottom: #{$baseline-push}rem;
+					padding-top: #{$baseline-shift}rem;
+				}
+			}
+
+			// If using a variable from the scale for fontsize.
+		} @else if $in-scale == true {
+			$get-scale: map-get($modular-scale-map, scale-0);
+			$get-size: map-get($get-scale, $fontsize);
+			$rootsize: nth($sizes, 1);
+
+			$baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
+
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+			// Loop through breakpoints.
+			@for $i from 2 through $breakpoints-limit {
+				$get-scale: map-get($modular-scale-map, scale-#{$i - 1});
+				$get-size: map-get($get-scale, $fontsize);
+				$rootsize: nth($sizes, $i);
+
+				$baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
+				$baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
+
+				@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+					margin-bottom: #{$baseline-push}rem;
+					padding-top: #{$baseline-shift}rem;
+				}
+			}
+
+		} @else {
+			@warn "#{$fontsize} is not a valid scale variable";
+		}
+
+	} @else {
+		@warn "#{$breakpoint} is not valid to use as a breakpoint";
+	}
+}
+
+// Set fontsize and baseline at once. Mix of fontsize and baseline mixin.
+@mixin sassline($fontsize, $font, $lineheight: 2, $below: 2, $breakpoint: 0) {
+	$font-value: type-of($fontsize);
+	$break-value: type-of($breakpoint);
+	$cap-height: map-get($font, cap-height);
+	$in-scale: in-modular-scale(scale-0, $fontsize);
+
+	line-height: #{$lineheight}rem;
+
+	@if $break-value == number and $breakpoint <= ($breakpoints-limit - 1) and $breakpoint >= 0 {
+
+		@if $font-value == number {
+			$rootsize: nth($sizes, ($breakpoint + 1));
+			$baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+			font-size: #{$fontsize / nth($sizes, ($breakpoint + 1))}rem;
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+		} @else if $in-scale == true {
+			$get-scale: map-get($modular-scale-map, scale-#{$breakpoint});
+			$get-size: map-get($get-scale, $fontsize);
+			$rootsize: nth($sizes, ($breakpoint + 1));
+			$baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
+			font-size: #{$get-size / nth($sizes, ($breakpoint + 1))}rem;
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+		} @else {
+			@warn "#{$fontsize} is not a valid scale variable";
+		}
+
+	} @else if $breakpoint == all {
+
+		@if $font-value == number {
+			$rootsize: nth($sizes, 1);
+			$baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+			font-size: #{$fontsize / nth($sizes, 1)}rem;
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+			@for $i from 2 through $breakpoints-limit {
+				$rootsize: nth($sizes, $i);
+				$baseline-shift: #{($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001};
+				$baseline-push: #{$below - (($fontsize / 2 * (($lineheight * $rootsize / $fontsize) - $cap-height)) / $rootsize + 0.00001)};
+				@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+					font-size: #{$fontsize / nth($sizes, $i)}rem;
+					margin-bottom: #{$baseline-push}rem;
+					padding-top: #{$baseline-shift}rem;
+				}
+			}
+
+		} @else if $in-scale == true {
+			$get-scale: map-get($modular-scale-map, scale-0);
+			$get-size: map-get($get-scale, $fontsize);
+			$rootsize: nth($sizes, 1);
+			$baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
+			$baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
+			font-size: #{$get-size / nth($sizes, 1)}rem;
+			margin-bottom: #{$baseline-push}rem;
+			padding-top: #{$baseline-shift}rem;
+
+			@for $i from 2 through $breakpoints-limit {
+				$get-scale: map-get($modular-scale-map, scale-#{$i - 1});
+				$get-size: map-get($get-scale, $fontsize);
+				$rootsize: nth($sizes, $i);
+				$baseline-shift: #{($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001};
+				$baseline-push: #{$below - (($get-size / 2 * (($lineheight * $rootsize / $get-size) - $cap-height)) / $rootsize + 0.00001)};
+				@media screen and (min-width: nth($points, $i) / 16 * 1em ) {
+					font-size: #{$get-size / nth($sizes, $i)}rem;
+					margin-bottom: #{$baseline-push}rem;
+					padding-top: #{$baseline-shift}rem;
+				}
+			}
+
+		} @else {
+			@warn "#{$fontsize} is not a valid scale variable";
+		}
+
+	} @else {
+		@warn "#{$breakpoint} is not valid to use as a breakpoint";
+	}
+}
+
+
+@mixin show-baseline-grid($baseline-grid-color:cyan) {
+	background-image: -webkit-linear-gradient(top, $baseline-grid-color 0, rgba(255, 255, 255, 0) 1px);
+	background-image: -moz-linear-gradient(top, $baseline-grid-color 0, rgba(255, 255, 255, 0) 1px);
+	background-image: -o-linear-gradient(top, $baseline-grid-color 0, rgba(255, 255, 255, 0) 1px);
+	background-image: linear-gradient(to bottom, $baseline-grid-color 0, rgba(255, 255, 255, 0) 1px);
+	background-repeat: repeat-y;
+	background-size: 100% 1rem;
+}
+
+//
+//@mixin fancy-link($bg-color,$size:normal) {
+//	@if $size == normal {
+//		text-shadow: 2px 0 $bg-color, 1px 0 $bg-color, -1px 0 $bg-color, -2px 0 $bg-color, 0 2px $bg-color, 0 1px $bg-color;
+//		background-position: 0 90%;
+//	}
+//	@if $size == tiny {
+//		text-shadow: 2px 0 $bg-color, 1px 0 $bg-color, -1px 0 $bg-color, -2px 0 $bg-color, 0 2px $bg-color, 0 1px $bg-color;
+//		background-position: 0 95%;
+//	}
+//	@if $size == small {
+//		text-shadow: 2px 0 $bg-color, 1px 0 $bg-color, -1px 0 $bg-color, -2px 0 $bg-color, 0 2px $bg-color, 0 1px $bg-color;
+//		background-position: 0 91%;
+//	}
+//	@if $size == large {
+//		text-shadow: 2px 0 $bg-color, 1px 0 $bg-color, -1px 0 $bg-color, -2px 0 $bg-color, 0 2px $bg-color, 0 1px $bg-color;
+//		background-position: 0 91%;
+//	}
+//}

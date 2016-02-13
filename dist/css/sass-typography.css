@@ -1,0 +1,1023 @@
+.typeset p {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 1.46199rem;
+  padding-top: 0.53801rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset p {
+    font-size: 1.36364rem;
+    margin-bottom: 1.44999rem;
+    padding-top: 0.55001rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset p {
+    font-size: 1.33333rem;
+    margin-bottom: 1.43999rem;
+    padding-top: 0.56001rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset p {
+    font-size: 1.30769rem;
+    margin-bottom: 1.43153rem;
+    padding-top: 0.56847rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset p {
+    font-size: 1.2rem;
+    margin-bottom: 1.39599rem;
+    padding-top: 0.60401rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset p {
+    font-size: 1.11765rem;
+    margin-bottom: 1.36881rem;
+    padding-top: 0.63119rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset p {
+    font-size: 1.05263rem;
+    margin-bottom: 1.34736rem;
+    padding-top: 0.65264rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset p {
+    font-size: 1rem;
+    margin-bottom: 1.32999rem;
+    padding-top: 0.67001rem;
+  }
+}
+
+.typeset p.small {
+  line-height: 2rem;
+  font-size: 0.896rem;
+  margin-bottom: 1.29567rem;
+  padding-top: 0.70433rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset p.small {
+    font-size: 0.87273rem;
+    margin-bottom: 1.28799rem;
+    padding-top: 0.71201rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset p.small {
+    font-size: 0.85333rem;
+    margin-bottom: 1.28159rem;
+    padding-top: 0.71841rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset p.small {
+    font-size: 0.83692rem;
+    margin-bottom: 1.27617rem;
+    padding-top: 0.72383rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset p.small {
+    font-size: 0.768rem;
+    margin-bottom: 1.25343rem;
+    padding-top: 0.74657rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset p.small {
+    font-size: 0.71529rem;
+    margin-bottom: 1.23604rem;
+    padding-top: 0.76396rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset p.small {
+    font-size: 0.67368rem;
+    margin-bottom: 1.22231rem;
+    padding-top: 0.77769rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset p.small {
+    font-size: 0.64rem;
+    margin-bottom: 1.21119rem;
+    padding-top: 0.78881rem;
+  }
+}
+
+.typeset p.tiny {
+  line-height: 2rem;
+  font-size: 0.7168rem;
+  margin-bottom: 1.23653rem;
+  padding-top: 0.76347rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset p.tiny {
+    font-size: 0.69818rem;
+    margin-bottom: 1.23039rem;
+    padding-top: 0.76961rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset p.tiny {
+    font-size: 0.68267rem;
+    margin-bottom: 1.22527rem;
+    padding-top: 0.77473rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset p.tiny {
+    font-size: 0.66954rem;
+    margin-bottom: 1.22094rem;
+    padding-top: 0.77906rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset p.tiny {
+    font-size: 0.6144rem;
+    margin-bottom: 1.20274rem;
+    padding-top: 0.79726rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset p.tiny {
+    font-size: 0.57224rem;
+    margin-bottom: 1.18883rem;
+    padding-top: 0.81117rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset p.tiny {
+    font-size: 0.53895rem;
+    margin-bottom: 1.17784rem;
+    padding-top: 0.82216rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset p.tiny {
+    font-size: 0.512rem;
+    margin-bottom: 1.16895rem;
+    padding-top: 0.83105rem;
+  }
+}
+
+.typeset h1,
+.typeset .alpha {
+  line-height: 3rem;
+  font-size: 4.27246rem;
+  margin-bottom: 0.88854rem;
+  padding-top: 0.11146rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 4.16149rem;
+    margin-bottom: 0.85247rem;
+    padding-top: 0.14753rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 4.06901rem;
+    margin-bottom: 0.82242rem;
+    padding-top: 0.17758rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 3.99076rem;
+    margin-bottom: 0.79699rem;
+    padding-top: 0.20301rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 3.66211rem;
+    margin-bottom: 0.69018rem;
+    padding-top: 0.30982rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 3.41079rem;
+    margin-bottom: 0.6085rem;
+    padding-top: 0.3915rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 3.21238rem;
+    margin-bottom: 0.54401rem;
+    padding-top: 0.45599rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h1,
+  .typeset .alpha {
+    font-size: 3.05176rem;
+    margin-bottom: 0.49181rem;
+    padding-top: 0.50819rem;
+  }
+}
+
+.typeset h2,
+.typeset .beta {
+  line-height: 3rem;
+  font-size: 3.41797rem;
+  margin-bottom: 0.61083rem;
+  padding-top: 0.38917rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 3.32919rem;
+    margin-bottom: 0.58198rem;
+    padding-top: 0.41802rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 3.25521rem;
+    margin-bottom: 0.55793rem;
+    padding-top: 0.44207rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 3.19261rem;
+    margin-bottom: 0.53759rem;
+    padding-top: 0.46241rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 2.92969rem;
+    margin-bottom: 0.45214rem;
+    padding-top: 0.54786rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 2.72863rem;
+    margin-bottom: 0.38679rem;
+    padding-top: 0.61321rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 2.5699rem;
+    margin-bottom: 0.33521rem;
+    padding-top: 0.66479rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h2,
+  .typeset .beta {
+    font-size: 2.44141rem;
+    margin-bottom: 0.29345rem;
+    padding-top: 0.70655rem;
+  }
+}
+
+.typeset h3,
+.typeset .gamma {
+  line-height: 3rem;
+  font-size: 2.73438rem;
+  margin-bottom: 0.38866rem;
+  padding-top: 0.61134rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 2.66335rem;
+    margin-bottom: 0.36558rem;
+    padding-top: 0.63442rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 2.60417rem;
+    margin-bottom: 0.34634rem;
+    padding-top: 0.65366rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 2.55409rem;
+    margin-bottom: 0.33007rem;
+    padding-top: 0.66993rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 2.34375rem;
+    margin-bottom: 0.26171rem;
+    padding-top: 0.73829rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 2.1829rem;
+    margin-bottom: 0.20943rem;
+    padding-top: 0.79057rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 2.05592rem;
+    margin-bottom: 0.16816rem;
+    padding-top: 0.83184rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h3,
+  .typeset .gamma {
+    font-size: 1.95312rem;
+    margin-bottom: 0.13476rem;
+    padding-top: 0.86524rem;
+  }
+}
+
+.typeset h4,
+.typeset .delta {
+  line-height: 2rem;
+  font-size: 2.1875rem;
+  margin-bottom: -0.28907rem;
+  padding-top: 0.28907rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 2.13068rem;
+    margin-bottom: -0.30754rem;
+    padding-top: 0.30754rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 2.08333rem;
+    margin-bottom: -0.32293rem;
+    padding-top: 0.32293rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 2.04327rem;
+    margin-bottom: -0.33595rem;
+    padding-top: 0.33595rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 1.875rem;
+    margin-bottom: -0.39063rem;
+    padding-top: 0.39063rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 1.74632rem;
+    margin-bottom: -0.43245rem;
+    padding-top: 0.43245rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 1.64474rem;
+    margin-bottom: -0.46547rem;
+    padding-top: 0.46547rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h4,
+  .typeset .delta {
+    font-size: 1.5625rem;
+    margin-bottom: -0.4922rem;
+    padding-top: 0.4922rem;
+  }
+}
+
+.typeset h5,
+.typeset .epsilon {
+  line-height: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: -0.43126rem;
+  padding-top: 0.43126rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.70455rem;
+    margin-bottom: -0.44603rem;
+    padding-top: 0.44603rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.66667rem;
+    margin-bottom: -0.45834rem;
+    padding-top: 0.45834rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.63462rem;
+    margin-bottom: -0.46876rem;
+    padding-top: 0.46876rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.5rem;
+    margin-bottom: -0.51251rem;
+    padding-top: 0.51251rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.39706rem;
+    margin-bottom: -0.54597rem;
+    padding-top: 0.54597rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.31579rem;
+    margin-bottom: -0.57238rem;
+    padding-top: 0.57238rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h5,
+  .typeset .epsilon {
+    font-size: 1.25rem;
+    margin-bottom: -0.59376rem;
+    padding-top: 0.59376rem;
+  }
+}
+
+.typeset h6,
+.typeset .zeta {
+  line-height: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: -0.54501rem;
+  padding-top: 0.54501rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1.36364rem;
+    margin-bottom: -0.55683rem;
+    padding-top: 0.55683rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1.33333rem;
+    margin-bottom: -0.56668rem;
+    padding-top: 0.56668rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1.30769rem;
+    margin-bottom: -0.57501rem;
+    padding-top: 0.57501rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1.2rem;
+    margin-bottom: -0.61001rem;
+    padding-top: 0.61001rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1.11765rem;
+    margin-bottom: -0.63677rem;
+    padding-top: 0.63677rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1.05263rem;
+    margin-bottom: -0.6579rem;
+    padding-top: 0.6579rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h6,
+  .typeset .zeta {
+    font-size: 1rem;
+    margin-bottom: -0.67501rem;
+    padding-top: 0.67501rem;
+  }
+}
+
+.typeset h6.small {
+  line-height: 2rem;
+  font-size: 0.896rem;
+  margin-bottom: -0.70881rem;
+  padding-top: 0.70881rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h6.small {
+    font-size: 0.87273rem;
+    margin-bottom: -0.71637rem;
+    padding-top: 0.71637rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h6.small {
+    font-size: 0.85333rem;
+    margin-bottom: -0.72268rem;
+    padding-top: 0.72268rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h6.small {
+    font-size: 0.83692rem;
+    margin-bottom: -0.72801rem;
+    padding-top: 0.72801rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h6.small {
+    font-size: 0.768rem;
+    margin-bottom: -0.75041rem;
+    padding-top: 0.75041rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h6.small {
+    font-size: 0.71529rem;
+    margin-bottom: -0.76754rem;
+    padding-top: 0.76754rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h6.small {
+    font-size: 0.67368rem;
+    margin-bottom: -0.78106rem;
+    padding-top: 0.78106rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h6.small {
+    font-size: 0.64rem;
+    margin-bottom: -0.79201rem;
+    padding-top: 0.79201rem;
+  }
+}
+
+.typeset h6.tiny {
+  line-height: 2rem;
+  font-size: 0.7168rem;
+  margin-bottom: -0.76705rem;
+  padding-top: 0.76705rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset h6.tiny {
+    font-size: 0.69818rem;
+    margin-bottom: -0.7731rem;
+    padding-top: 0.7731rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset h6.tiny {
+    font-size: 0.68267rem;
+    margin-bottom: -0.77814rem;
+    padding-top: 0.77814rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset h6.tiny {
+    font-size: 0.66954rem;
+    margin-bottom: -0.78241rem;
+    padding-top: 0.78241rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset h6.tiny {
+    font-size: 0.6144rem;
+    margin-bottom: -0.80033rem;
+    padding-top: 0.80033rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset h6.tiny {
+    font-size: 0.57224rem;
+    margin-bottom: -0.81403rem;
+    padding-top: 0.81403rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset h6.tiny {
+    font-size: 0.53895rem;
+    margin-bottom: -0.82485rem;
+    padding-top: 0.82485rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset h6.tiny {
+    font-size: 0.512rem;
+    margin-bottom: -0.83361rem;
+    padding-top: 0.83361rem;
+  }
+}
+
+.typeset ul,
+.typeset ol {
+  display: inline;
+}
+
+.typeset ul.not-inline li:last-child,
+.typeset ol.not-inline li:last-child {
+  margin-bottom: 0;
+}
+
+.typeset ul li,
+.typeset ol li {
+  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+          font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+  margin-left: 2rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset ul li,
+  .typeset ol li {
+    margin-left: 0;
+  }
+}
+
+.typeset ul li p,
+.typeset ol li p {
+  line-height: 2rem;
+  margin-bottom: 1.46199rem;
+  padding-top: 0.53801rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.44999rem;
+    padding-top: 0.55001rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.43999rem;
+    padding-top: 0.56001rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.43153rem;
+    padding-top: 0.56847rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.39599rem;
+    padding-top: 0.60401rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.36881rem;
+    padding-top: 0.63119rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.34736rem;
+    padding-top: 0.65264rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset ul li p,
+  .typeset ol li p {
+    margin-bottom: 1.32999rem;
+    padding-top: 0.67001rem;
+  }
+}
+
+.typeset ul li:last-child p,
+.typeset ol li:last-child p {
+  line-height: 2rem;
+  margin-bottom: 1.46199rem;
+  padding-top: 0.53801rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.44999rem;
+    padding-top: 0.55001rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.43999rem;
+    padding-top: 0.56001rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.43153rem;
+    padding-top: 0.56847rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.39599rem;
+    padding-top: 0.60401rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.36881rem;
+    padding-top: 0.63119rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.34736rem;
+    padding-top: 0.65264rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset ul li:last-child p,
+  .typeset ol li:last-child p {
+    margin-bottom: 1.32999rem;
+    padding-top: 0.67001rem;
+  }
+}
+
+.typeset ul.small li,
+.typeset ul.small li p,
+.typeset ol.small li,
+.typeset ol.small li p {
+  font-size: 0.896rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.87273rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.85333rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.83692rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.768rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.71529rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.67368rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset ul.small li,
+  .typeset ul.small li p,
+  .typeset ol.small li,
+  .typeset ol.small li p {
+    font-size: 0.64rem;
+  }
+}
+
+.typeset blockquote p {
+  border-left: 0.15rem solid blue;
+  font-style: italic;
+  padding-left: 1rem;
+  margin-bottom: 1.92399rem;
+  padding-bottom: 0.53801rem;
+}
+
+@media screen and (min-width: 30em) {
+  .typeset blockquote p {
+    margin-bottom: 1.89999rem;
+    padding-bottom: 0.55001rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .typeset blockquote p {
+    margin-bottom: 1.87999rem;
+    padding-bottom: 0.56001rem;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .typeset blockquote p {
+    margin-bottom: 1.86307rem;
+    padding-bottom: 0.56847rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .typeset blockquote p {
+    margin-bottom: 1.79199rem;
+    padding-bottom: 0.60401rem;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .typeset blockquote p {
+    margin-bottom: 1.73764rem;
+    padding-bottom: 0.63119rem;
+  }
+}
+
+@media screen and (min-width: 105em) {
+  .typeset blockquote p {
+    margin-bottom: 1.69473rem;
+    padding-bottom: 0.65264rem;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  .typeset blockquote p {
+    margin-bottom: 1.65999rem;
+    padding-bottom: 0.67001rem;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .typeset blockquote {
+    margin-left: -1rem;
+  }
+}

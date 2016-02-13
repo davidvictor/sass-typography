@@ -1,0 +1,96 @@
+$blank-loaded: false;
+
+/// Create the font face for the Adobe Blank Font
+//  +==============================================================================-
+/// @param {Boolean} $blank-loaded - Has the blank font been already declared?
+
+@mixin blank-font($blank-loaded) {
+	@if $blank-loaded == false {
+		@at-root {
+			@font-face {
+				font-family: 'blank';
+				src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('woff');
+				font-style: normal;
+				font-weight: 400;
+			}
+		}
+		$blank-loaded: true !global;
+	}
+}
+
+/// Hide text mixin that uses adobe blank
+@mixin hide-text($bl:$blank-loaded) {
+	@if not $bl {
+		@include blank-font($bl)
+	}
+	font-family: blank !important;
+	// The font above only has lowercase characters to reduce size.
+	text-transform: lowercase !important;
+	color: $trans !important;
+	$blank-loaded: true !global;
+}
+
+// -------------------------------------------------------------------------------
+//  White Space
+// -------------------------------------------------------------------------------
+
+@mixin white-space($wrap-space) {
+	@if $wrap-space == "pre-wrap" {
+		white-space: -moz-#{$wrap-space};
+		white-space: $wrap-space;
+	} @else {
+		white-space: $wrap-space;
+	}
+}
+
+// -------------------------------------------------------------------------------
+//  Hyphens
+// -------------------------------------------------------------------------------
+
+@mixin hyphens($val) {
+	-webkit-hyphens: $val;
+	-moz-hyphens: $val;
+	-ms-hyphens: $val;
+	-o-hyphens: $val;
+	hyphens: $val;
+}
+
+// -------------------------------------------------------------------------------
+//  Small Caps
+// -------------------------------------------------------------------------------
+
+@mixin smallcaps($color, $font-weight) {
+	font-variant: small-caps;
+	font-weight: $font-weight;
+	text-transform: lowercase;
+	color: $color;
+}
+
+// ------------------------------------------------------------------------------
+// !-- Truncate
+// ------------------------------------------------------------------------------
+
+@mixin truncate($mw:100%) {
+	text-overflow: ellipsis;
+	vertical-align: top;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	max-width: $mw;
+}
+
+
+
+// ------------------------------------------------------------------------------
+// !-- Line Clamp
+// ------------------------------------------------------------------------------
+
+@mixin line-clamp($number-of-lines,$line-height) {
+	position: relative;
+	overflow: hidden;
+	line-height: $line-height;
+	max-height: $line-height * $number-of-lines + 1;
+	display: -webkit-box;
+	-webkit-line-clamp: $number-of-lines;
+	-webkit-box-orient: vertical;
+}

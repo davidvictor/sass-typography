@@ -1,0 +1,164 @@
+// Modular scale
+// ---------------------------------------
+
+// Setting responsive modular-scales. Use appropriate scales for viewport sizes.
+//$modular-scale-map: (
+//	// Major Third http://modularscale.com/scale/?px1=16&px2=28&ra1=1.25&ra2=0
+//	scale-0: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	// Major Third http://modularscale.com/scale/?px1=17&px2=30&ra1=1.25&ra2=0
+//	scale-1: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	// Major Third http://modularscale.com/scale/?px1=18&px2=32&ra1=1.25&ra2=0
+//	scale-2: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	// Major Third  hhttp://www.modularscale.com/?19,34&px&1.25&web&text
+//	scale-3: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	// Perfect Fourth http://modularscale.com/scale/?px1=20&px2=40&ra1=1.333&ra2=0
+//	scale-4: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	// Aug. Fourth http://modularscale.com/scale/?px1=22&px2=50&ra1=1.414&ra2=0
+//	scale-5: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	scale-6: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	),
+//	scale-7: (
+//		alpha:   28.0,
+//		beta:    25.0,
+//		gamma:   22.4,
+//		delta:   20.0,
+//		epsilon: 17.9,
+//		zeta:    16.0,
+//		eta:     14.3,
+//		theta:   12.8,
+//		iota:    11.5,
+//		kappa:	 10.2,
+//		lamda:	 9.2
+//	)
+//);
+
+$modular-scale-steps: (
+	scale-0:(
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-1: (
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-2: (
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-3: (
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-4: (
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-5: (
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-6: (
+		range: 16 30,
+		ratio: $major-third
+	),
+	scale-7:(
+		range: 16 30,
+		ratio: $major-third
+	),
+);
+
+$modular-scale-names: (alpha beta gamma delta epsilon zeta eta theta iota kappa lamda);
+
+@function ms-build-map(){
+
+};
+
+$modular-scale-map: ms-build-map;
+
+@debug ms-list(-5, 5, 16 30, $major-third);
+
+
+@include debug($modular-scale-map);

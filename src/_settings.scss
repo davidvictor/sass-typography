@@ -1,0 +1,105 @@
+// ⧂⧟⧟❛Ʀoɑr⧟Ƒrɑmeworĸ⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⧟⦒≻
+
+// +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳
+// | SASS TYPOGRAPHY | SETTINGS
+// +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳\
+
+$rem-base: 16px !default;
+// Note: For the following Sass maps enter values as if they would be px units.
+
+// Breakpoint sizes from px to ems. Add more values here to add more breakpoints.
+// Change names if you prefer, it wont break the mixin as long as they are strings not just numbers.
+
+$type-breakpoints: (
+	break-0: 0,
+	break-1: 480,
+	break-2: 768,
+	break-3: 1024,
+	break-4: 1280,
+	break-5: 1440,
+	break-6: 1680,
+	break-7: 1920
+) !default;
+
+// Root font-sizes for each breakpoint. Set to half desired line-height of body text.
+// ! Make sure to have as many sizes as breakpoints above.
+$rootsizes: (
+	rootsize-0: 10,
+	rootsize-1: 11,
+	rootsize-2: 12,
+	rootsize-3: 13,
+	rootsize-4: 15,
+	rootsize-5: 17,
+	rootsize-6: 19,
+	rootsize-7: 21,
+) !default;
+
+
+$default-font-stack: 'Avenir, Helvetica, Arial, sans-serif' !default;
+
+//$brandon: 'brandon', #{$font-stack-fallback};
+//$eames: 'eames', #{$font-stack-fallback};
+//$proxima: 'proxima-nova', #{$font-stack-fallback};
+//$sf: 'SanFranciscoText', #{$font-stack-fallback};
+
+// Add typefaces here.
+// Add weight and style details too.
+// ! Set cap height to set to the baseline.
+$bodytype: (
+	font-family: $default-font-stack,
+	regular: 300,
+	bold: 500,
+	italic: italic,
+	cap-height: 0.66
+) !default;
+
+$headingtype: (
+	font-family: $default-font-stack,
+	regular: 300,
+	bold: 500,
+	cap-height: 0.65
+) !default;
+
+$monospacetype: (
+	font-family: 'Menlo, monospace',
+	regular: 400,
+	cap-height: 0.68
+) !default;
+
+// Here are some local fonts cap-height sizes to get you started:
+// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
+// Lucida Grande: 0.72, Helvetica: 0.65, Verdana: 0.76, Tahoma: 0.76
+
+// Selection of Typekit fonts cap-height sizes:
+// Proxima Nova: 0.57, Museo Slab: 0.66, JAF Facit: 0.7, Brandon Grotesque: 0.65, Clavo: 0.7, Adelle: 0.66, FF Tisa Pro: 0.82, Jubilat: 0.66, Futura PT: 0.66, Chaparral Pro: 0.5, Minion Pro: 0.66, Myriad Pro: 0.66, Adobe Caslon Pro: 0.36
+
+// Text colours. 
+$heading-color: black !default;
+$body-color: #494949 !default;
+$link-color: blue !default;
+$hover-color: rebeccapurple !default;
+$caption-color: grey !default;
+$white: #ffffff !default;
+
+// Background colors.
+$type-bg-color: white !default;
+$code-bg-color: #f5f4f2 !default;
+
+$font-key-map: (
+	font-body: (
+		id: font-body,
+		value: $default-font-stack
+	),
+	font-headings: (
+		id: font-headings,
+		value: $default-font-stack
+	),
+	font-condensed: (
+		id: font-condensed,
+		value: $default-font-stack
+	),
+	font-extra-condensed: (
+		id: font-extra-condensed,
+		value: $default-font-stack
+	)
+) !default;
