@@ -1,0 +1,70 @@
+@if $roar-include-type-helper-classes {
+
+
+	.caps {
+		text-transform: capitalize;
+	}
+
+	// Letter space those capitals people, Jan Tschichold would be proud.
+	.uppercase {
+		letter-spacing: 0.02rem;
+		text-transform: uppercase;
+	}
+
+	.lowercase {
+		text-transform: lowercase;
+	}
+
+	// Real small caps.
+	.small-caps {
+		.#{$vertical-rhythm-class} & {
+			font-feature-settings: 'smcp' 1, 'kern' 1;
+			letter-spacing:        0.005rem;
+		}
+	}
+
+	// Consistent height numbers with OpenType.
+	.lining-numerals {
+		.#{$vertical-rhythm-class} & {
+			font-feature-settings: 'lnum' 1, 'kern' 1;
+		}
+	}
+
+	// Ascending and descending numbers with OpenType.
+	.oldstyle-numerals {
+		.#{$vertical-rhythm-class} & {
+			font-feature-settings: 'onum' 1, 'kern' 1;
+		}
+	}
+
+
+	.weight-100 {
+		@include font-weight(thin);
+	}
+	.weight-200 {
+		@include font-weight(extra-light);
+	}
+	.weight-300 {
+		@include font-weight(light);
+	}
+	.weight-400 {
+		@include font-weight(book);
+	}
+	.weight-500 {
+		@include font-weight(medium);
+	}
+	.weight-600 {
+		@include font-weight(semi-bold);
+	}
+	.weight-700 {
+		@include font-weight(bold);
+	}
+	.weight-800 {
+		@include font-weight(extra-bold);
+	}
+	.weight-900 {
+		@include font-weight(ultra-bold);
+	}
+
+
+}
