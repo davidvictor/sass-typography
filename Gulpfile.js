@@ -20,7 +20,8 @@ var config = {
 			'src/_ms.scss',
 			'src/_font-face.scss',
 			'src/_misc.scss',
-			'src/_typography.scss'
+			'src/_typography.scss',
+			'src/_helper-classes.scss'
 		]
 	},
 	output: {

@@ -5,7 +5,7 @@
 // +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳\
 
 $roar-include-type-helper-classes: true !default;
-$vertical-rhythm-class: typeset;
+$vertical-rhythm-class: typeset !default;
 
 $rem-base: 16px !default;
 // Note: For the following Sass maps enter values as if they would be px units.

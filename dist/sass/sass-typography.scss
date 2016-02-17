@@ -16,7 +16,8 @@
 // | SASS TYPOGRAPHY | SETTINGS
 // +≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡⊳\
 
-$vertical-rhythm-class: typeset;
+$roar-include-type-helper-classes: true !default;
+$vertical-rhythm-class: typeset !default;
 
 $rem-base: 16px !default;
 // Note: For the following Sass maps enter values as if they would be px units.
@@ -318,6 +319,41 @@ $blank-loaded: false;
 	display: -webkit-box;
 	-webkit-line-clamp: $number-of-lines;
 	-webkit-box-orient: vertical;
+}
+
+// ------------------------------------------------------------------------------
+// !-- Font Weight
+// ------------------------------------------------------------------------------
+
+
+@mixin font-weight($weight) {
+	$weights: (
+							thin: 100,
+							extra-light: 200,
+							ultra-light: 200,
+							light: 300,
+							normal: 400,
+							book: 400,
+							regular: 400,
+							medium: 500,
+							semi-bold: 600,
+							demi-bold: 600,
+							bold: 700,
+							extra-bold: 800,
+							ultra-bold: 900,
+							heavy: 900,
+							black: 900,
+							ultra: 900,
+							ultra-black: 900,
+							extra-ultra: 900
+						);
+
+	$output: $weight;
+	@if map-has-key($weights, $weight) {
+		$output: map-get($weights, $weight);
+	}
+
+	font-weight: $output;
 }
 
 // SCSS mixins
@@ -698,3 +734,86 @@ $points: map-values($type-breakpoints);
 //		background-position: 0 91%;
 //	}
 //}
+
+@if $roar-include-type-helper-classes {
+
+
+	.caps {
+		text-transform: capitalize;
+	}
+
+	// Letter space those capitals people, Jan Tschichold would be proud.
+	.uppercase {
+		letter-spacing: 0.02rem;
+		text-transform: uppercase;
+	}
+
+	.lowercase {
+		text-transform: lowercase;
+	}
+
+	.letter-spacing-small {
+		letter-spacing: 0.02rem;
+	}
+
+	.letter-spacing-medium {
+		letter-spacing: 0.04rem;
+	}
+
+	.letter-spacing-large {
+		letter-spacing: 0.06rem;
+	}
+
+	// Real small caps.
+	.small-caps {
+		.#{$vertical-rhythm-class} & {
+			font-feature-settings: 'smcp' 1, 'kern' 1;
+			letter-spacing:        0.005rem;
+		}
+	}
+
+	// Consistent height numbers with OpenType.
+	.lining-numerals {
+		.#{$vertical-rhythm-class} & {
+			font-feature-settings: 'lnum' 1, 'kern' 1;
+		}
+	}
+
+	// Ascending and descending numbers with OpenType.
+	.oldstyle-numerals {
+		.#{$vertical-rhythm-class} & {
+			font-feature-settings: 'onum' 1, 'kern' 1;
+		}
+	}
+
+
+	.weight-100 {
+		@include font-weight(thin);
+	}
+	.weight-200 {
+		@include font-weight(extra-light);
+	}
+	.weight-300 {
+		@include font-weight(light);
+	}
+	.weight-400 {
+		@include font-weight(book);
+	}
+	.weight-500 {
+		@include font-weight(medium);
+	}
+	.weight-600 {
+		@include font-weight(semi-bold);
+	}
+	.weight-700 {
+		@include font-weight(bold);
+	}
+	.weight-800 {
+		@include font-weight(extra-bold);
+	}
+	.weight-900 {
+		@include font-weight(ultra-bold);
+	}
+
+
+}
